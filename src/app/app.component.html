@@ -1,0 +1,52 @@
+
+<div  class="titleLine" style="text-align:center;color:antiquewhite">
+  <h1>
+    {{ title }}
+  </h1>
+  </div>
+  <div style="text-align:center;color:rgb(12, 197, 12)">
+  <h2>
+      {{ message }}
+  </h2>
+  
+  <div *ngIf="this.selectedProductVisible">
+   <h2>
+    {{selectedProductName}} <br/>
+    
+   </h2>
+   </div>
+
+  <div *ngIf="this.selectAlert" style="text-align:center;color:Red">
+    <h2>
+     Please select a product !
+    </h2>
+  </div>
+   
+  <div *ngIf="this.purchaseDetailsVisible" >
+  
+   <h4>
+    {{ response.purchaseFeedback}} <br/>
+    Return Amount : {{ response.returnAmount}} <br/>      
+   </h4>
+  </div>
+  
+  <div *ngIf="selectedProductAlertVisible==true">
+      <h4>
+       StatusCode :{{errorObject.statusCode}} <br/>
+       {{errorObject.message}}
+      </h4>
+  </div>
+  <div class = "content_box" style="color:white" >
+    Please Pay {{selectedProductPrice}} : <input #textbox type="text" [(ngModel)]="amountPaid" placeholder=" in Rands" required>  &nbsp;
+    <button class="button" (click)="buySelectedItem()">submit</button> &nbsp;
+    <input class="cancelButton" type="button" value='cancel' (click)="resetAmount()">
+    </div>
+</div>
+
+<div class="app_container" style="text-align:center">
+  <div *ngFor="let category of categories">
+    <p class="line">{{category.category}}</p>
+    <app-grid (out)='clicked($event)' [productItems]='category.products'></app-grid>
+  </div>
+</div>
+

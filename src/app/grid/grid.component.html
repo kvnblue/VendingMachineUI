@@ -1,0 +1,17 @@
+<!-- <div fxLayout="row" fxLayoutAlign="center center" >
+  <div fxFlex *ngFor="let bev of beverages">
+    <img [src]='bev.img' width="200em" height="200em">
+    <h1>{{bev.title}}</h1>
+  </div>
+</div> -->
+<div fxLayout="row" class="parent">
+  <div fxFlex *ngFor="let item of productItems" style="color:white">
+    <a (click)="sendEvent(item)" >
+      
+      <h3>{{item.productName}}<br/>
+          R{{item.price}}.00</h3>
+          
+    </a>
+    Qty : {{item.availableCount}}
+  </div>
+</div>

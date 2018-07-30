@@ -1,0 +1,22 @@
+.image{
+padding: 5px;
+
+}
+
+.parent{
+    overflow: auto;
+    border-bottom:dotted;
+}
+
+a:hover {
+    color:#666;
+    text-decoration: none;
+    border-bottom:dotted;
+    cursor: pointer;
+}
+ 
+a:hover img {
+    background-color:#00FF00;
+    border: 1px solid #ff12fc;
+    text-decoration: none; /* the underline shouldn't show, but it does */
+}
