@@ -16,11 +16,11 @@ export class AppComponent implements OnInit{
   categories: any ;
   message = 'Welcome';
   errorObject:any;
-  private purchaseDetailsVisible = false;
-  private selectedProductVisible = false;
-  private selectedProductAlertVisible = false;
-  private errorAlertVisible = true;
-  private selectAlert = false;
+  public purchaseDetailsVisible = false;
+  public selectedProductVisible = false;
+  public selectedProductAlertVisible = false;
+  public errorAlertVisible = true;
+  public selectAlert = false;
   
   selectedProductName : any;
   selectedProductPrice : any;
