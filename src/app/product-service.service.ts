@@ -13,7 +13,8 @@ export class ProductServiceService {
 
   constructor(private http : HttpClient) { }
   getProductCategories() {
-    return this.http.get('http://localhost:5100/vm/api/productcategories');
+   // return this.http.get('http://localhost:5100/vm/api/productcategories');
+   return this.http.get('https://vending-machine-api.herokuapp.com/vm/api/productcategories');
   }
 
   submitItemSelection (id,amount): Observable<any> {
@@ -26,7 +27,8 @@ export class ProductServiceService {
     };
     
     return this.http
-      .post('http://localhost:5100/vm/api/productcategories/product/purchase',JSON.stringify(bodyObj),httpOptions);
+      .post('https://vending-machine-api.herokuapp.com/vm/api/productcategories/product/purchase',JSON.stringify(bodyObj),httpOptions);
+      //.post('http://localhost:5100/vm/api/productcategories/product/purchase',JSON.stringify(bodyObj),httpOptions);
   }
   
   private extractData(res: Response) {
